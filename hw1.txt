@@ -1,0 +1,223 @@
+
+// 1.   Write the C++ declaration for a pointer variable that can store the address of a double variable: 
+        //  double * dblPtr;
+
+// 2.	Write a C++ statement that will use the C++ new operator to dynamically allocate memory for a double variable. Store the address of this newly allocated double in the pointer variable you declared in the previous step. 
+            // new double number;
+            // dblPtr = &number;
+            
+// 3.	Write a C++ statement that will assign the double value 4.12 to the memory for the double variable that you allocated from step 5. HINT: You will need to use the * operator and the pointer variable that holds the address of the double. 
+            // 	*dblPtr = 4.12;
+            
+// 4.	Write a C++ statement that will release the memory that was allocated using the new operator.
+            // 	 delete number;
+
+// 5.	What is wrong with the following code? 
+            // 	char *variable ; 
+            // 	variable = 3; 
+            // 	What is wrong with this code is that you are giving a value to a pointer. But you should be assigning the pointer to something you want to point too.
+// 6.	What operator would you use to obtain the memory address of the variable, myVar? 
+            // 	int myVar; 
+            // 	The operator would be ‘&’
+// 7.	Declare and allocate an array of 10 int elements using dynamic memory allocation. 
+            // 	int * array;
+            // 	array = new int [10];
+
+//8. Write a C++ for loop that assigns the integer value 42 to every element in the array allocated in the previous question. However, you must use pointer arithmetic to advance and access each element (don’t use array notation). 
+            //	for (int i = 0; i < 10; i++){
+            // 	*array = 42;
+            // 	array++;
+            // 	}
+
+// 9.	Write a statement that will release the memory allocated for the array in question 6 back to the operating system. 
+            // 	delete [] array;
+
+// 10.	Write the code for a function that has the following prototype 
+// 	int *doubleCapacity(int *list, int size); 
+// 	The function doubles the size (indicated by the parameter size) of the array passed in through parameter list. 
+// 	(HINT: This was a CS172 homework assignment!) 
+    // 	newArray = new int [size*2]
+    // 	for (int i = 0l; i < size*2; i++){
+    // 	if (i < size){
+    // 	newArray[i] = list[i];}
+    // 	else{
+    // 	newArray = 0;}
+    // 	list = newArray;}
+    //  return list;
+
+
+// Ex1_02: Classes:
+// 	11. Declare a C++ class called Circle that conforms to the following description: 
+// a.) It has a private property (member variable) called radius that is of a double data type. () 
+// b.) It has a public default constructor that initializes the radius of a circle object to “0” () 
+// c.) It has a public overloaded constructor that takes a parameter to initialize the radius of a circle object () 
+// d.) It has a public method called getArea() that returns the computed area (π*radius*radius) of the circle object. () 
+// e.) It has public getter and setter methods for accessing and modifying the radius of a circle object respectively () 
+
+    // class Circle{
+    //     private:
+    //         double radius;
+    //     public:
+    //         Circle(){
+    //             radius = 0.0;
+    //         }
+    //         Circle(double r_in){
+    //             radius = r_in;
+    //         }
+    //         double getArea(){
+    //             return 3.14*radius*radius;
+    //         }
+    //         double getRadius(){
+    //             return radius;
+    //         }
+    //         void setRadius(double r){
+    //             radius = r;
+    //         }
+    // };
+
+// 12. Declare a Circle object variable, called myCircle1, using the default constructor. 
+
+    // Circle myCircle1;
+
+// 13. Declare a Circle object variable, called myCircle2, using the overloaded constructor to initialize its radius to “10”. 
+
+    // Circle myCircle2(10.0);
+
+// 14. Declare a pointer variable to a Circle object, and allocate memory for it using the overloaded constructor to initialize its radius to “12”. 
+
+    
+    // Circle * circlePtr = new Circle(12);
+    
+
+// 15. Declare an array of 10 Circle objects using the default constructor. 
+    
+    // Circle array[10];
+
+// 16. Write a C++ for loop that assigns the radius of every Circle object in the array defined in the previous question to “15”.
+
+    // for (int i = 0; i < 10; i++0{
+
+    //     array[i].setRadius(15);
+    // }
+
+//EX1_03
+
+// 17. Using templates, convert the following Swap function to work with arguments of any generic type T: 
+
+// void Swap(int & A, int & B) { 
+// int tmp = A; 
+// A = B; 
+// B = tmp; 
+// } 
+
+    // template <typename T>
+    // void Swap(T & A, T & B){
+    //     T tmp = A;
+    //     A = B;
+    //     B = tmp;
+
+    // }
+
+// 18. Using templates, convert the following class to hold an array of any generic type T: 
+
+// class MyVec { 
+// private: 
+// int *array; // dynamically allocated array 
+
+// public: 
+// MyVec(int size) { // constructor creates array of size “size” 
+// array = new int[size]; 
+// } 
+
+// ~MyVec() { // destructor returns memory back to system 
+// delete [] array; 
+// } 
+// }; 
+
+    // template <typename T>
+    //  class MyVec { 
+    //     private: 
+    //     T *array;  
+
+    //     public: 
+    //     MyVec(T size) { 
+    //     array = new T[size]; 
+    //     } 
+
+    //     ~MyVec() { 
+    //     delete [] array; 
+    //     } 
+    // }; 
+
+// 19. Declare an object of the template class defined in the previous question (i.e. MyVec) to hold an array of double data types. 
+
+    // MyVec vec(4.0);
+
+// 20. Declare an STL vector object for storing elements of the char data type. 
+    
+    // vector <char> letters;
+
+// 21. Write a C++ for loop to assign a value (of your choice) to every element in the vector object declared in the previous question. 
+
+    // for (int i = 0; i < 5; i++){
+
+    //     letters.push_back('R');
+    // }
+
+// 22. What STL vector method do you use to get the current size of the vector
+
+    // letters.size();
+
+
+//EX1_04
+
+// 23. Draw a UML diagram describing the composition relationship between the Elevator and Building class. 
+
+// class Elevator { 
+// … 
+// }; 
+// class Building { 
+// public: 
+// Elevator elevator; 
+// … 
+// }; 
+
+    //Inside word doc.
+
+// 24. Draw a UML diagram describing the inheritance relationship between the Square and Shape class. 
+
+// class Shape { 
+// … 
+// }; 
+// class Square : public Shape { 
+// … 
+// }; 
+
+    //Inside word Doc
+
+// 25. When class A inherits class B, class A also inherits all public methods and variables in class B? (true/false) 
+
+    //True
+
+// 26. When class A inherits class B, can the private members variables of class B be accessed in class A? (yes/no) 
+
+    //No
+
+// 27. Write C++ code for the classes “Animal”, “Cat”, and “Mouth”. These classes must implement the following UML relationship, i.e. “Cat” is an “Animal”, and it has a “Mouth”. 
+
+// The C++ classes do not need to have any other member variables or methods, other than what is needed to demonstrate the class relationship. 
+
+// Create a visual studio C++ project and define you classes in there. 
+
+// Your main() function should declare a Cat object. 
+
+// Email the source code files (.cpp and .h) to your instructor 
+
+
+
+// 28. Create a Visual Studio C++ project and define the Circle class used in EX1_02. For the class, define an operator + method that will add 2 circles together to give you a new Circle with their radius added. 
+// Your main() function should declare 2 circle objects of different radii. Add the 2 circles with “+” to derive a 3rd circle object with a combined radii. 
+
+// Email the source code files (.cpp and .h) to your instructor 
+
+// (Operator overloading is a concept we will be using throughout this semester. Please review page 31 of your CS273 textbook, and look back to your CS172 book as well, or look online.)
