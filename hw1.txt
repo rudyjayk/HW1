@@ -1,10 +1,14 @@
 
 // 1.   Write the C++ declaration for a pointer variable that can store the address of a double variable: 
         //  double * dblPtr;
+        
+        //PT -- best to initialize to NULL: double* dblPtr = NULL;
 
 // 2.	Write a C++ statement that will use the C++ new operator to dynamically allocate memory for a double variable. Store the address of this newly allocated double in the pointer variable you declared in the previous step. 
             // new double number;
             // dblPtr = &number;
+            
+            //PT -- dblPtr = new double; -2
             
 // 3.	Write a C++ statement that will assign the double value 4.12 to the memory for the double variable that you allocated from step 5. HINT: You will need to use the * operator and the pointer variable that holds the address of the double. 
             // 	*dblPtr = 4.12;
@@ -178,7 +182,7 @@
 // }; 
 // class Building { 
 // public: 
-// Elevator elevator; 
+// Elevator elevator; //PT -- make this private. -1
 // … 
 // }; 
 
